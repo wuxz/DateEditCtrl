@@ -1,0 +1,87 @@
+// DateEditbox.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (DateEditbox.tlb) that will become a resource in
+// DateEditbox.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(F6D0E404-2D34-11D2-9A46-0080C8763FA4), version(1.0),
+  helpfile("DateEditbox.hlp"),
+  helpstring("BHM DateMaskEditbox ActiveX Control module"),
+  control ]
+library DATEEDITBOXLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CDateEditBoxCtrl
+
+	[ uuid(F6D0E405-2D34-11D2-9A46-0080C8763FA4),
+	  helpstring("Dispatch interface for BHM DateMaskEditbox Control"), hidden ]
+	dispinterface _DDateEditbox
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDateEditBoxCtrl)
+			[id(5), helpstring("The format used to input date")] BSTR DateFormat;
+			[id(6), helpstring("The format used to display date")] BSTR DisplayDateFormat;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(DISPID_BORDERSTYLE), bindable, requestedit] short BorderStyle;
+			[id(DISPID_FORECOLOR), bindable, requestedit] OLE_COLOR ForeColor;
+			[id(7), helpstring("The current data")] BSTR Text;
+			[id(1), helpstring("Is the control readonly")] boolean ReadOnly;
+			[id(8), helpstring("The direction the text in control be written")] short TextAlign;
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(2), helpstring("Can the user enter negative year when the year format is ggg")] boolean CanYearNegative;
+			[id(DISPID_ENABLED), bindable, requestedit] boolean Enabled;
+			[id(3)] short CtlIndex;
+			[id(4)] boolean CtlStop;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDateEditBoxCtrl)
+			[id(9)] void SetDate(short nYear, short nMonth, short nDay);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CDateEditBoxCtrl
+
+	[ uuid(F6D0E406-2D34-11D2-9A46-0080C8763FA4),
+	  helpstring("Event interface for BHM DateMaskEditbox Control") ]
+	dispinterface _DDateEditboxEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDateEditBoxCtrl)
+			[id(DISPID_CLICK)] void Click();
+			[id(DISPID_DBLCLICK)] void DblClick();
+			[id(DISPID_KEYDOWN)] void KeyDown(short* KeyCode, short Shift);
+			[id(DISPID_KEYPRESS)] void KeyPress(short* KeyAscii);
+			[id(DISPID_KEYUP)] void KeyUp(short* KeyCode, short Shift);
+			[id(1)] void Change();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDateEditBoxCtrl
+
+	[ uuid(F6D0E407-2D34-11D2-9A46-0080C8763FA4),
+	  helpstring("BHM DateMaskEditbox Control"), control ]
+	coclass BHM_DateMaskEditbox
+	{
+		[default] dispinterface _DDateEditbox;
+		[default, source] dispinterface _DDateEditboxEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

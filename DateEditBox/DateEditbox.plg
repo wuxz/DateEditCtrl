@@ -1,0 +1,45 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DateEditbox - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINDOWS\TEMP\RSPA321.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_USRDLL" /D "_WINDLL" /D "_AFXDLL" /D "_GXDLL" /FR"Debug/" /Fp"Debug/DateEditbox.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\wxz\DateEditBox\DateEditboxCtl.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSPA321.TMP" 
+Creating temporary file "C:\WINDOWS\TEMP\RSPA322.TMP" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/DateEditbox.pdb" /debug /machine:I386 /def:".\DateEditbox.def" /out:"Debug/DateEditbox.ocx" /implib:"Debug/DateEditbox.lib" /pdbtype:sept 
+.\Debug\DateEditbox.obj
+.\Debug\DateEditboxCtl.obj
+.\Debug\DateEditboxPpg.obj
+.\Debug\DlgDatePicker.obj
+.\Debug\StdAfx.obj
+.\Debug\DateEditbox.res
+]
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSPA322.TMP"
+Creating temporary file "C:\WINDOWS\TEMP\RSPA323.BAT" with contents
+[
+@echo off
+regsvr32 /s /c ".\Debug\DateEditbox.ocx"
+echo regsvr32 exec. time > ".\Debug\regsvr32.trg"
+]
+Creating command line "C:\WINDOWS\TEMP\RSPA323.BAT"
+Compiling...
+DateEditboxCtl.cpp
+Linking...
+<h3>Output Window</h3>
+Registering ActiveX Control...
+
+
+
+<h3>Results</h3>
+DateEditbox.ocx - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
